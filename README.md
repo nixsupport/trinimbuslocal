@@ -1,4 +1,5 @@
 #A simple web app to deploy on AWS with RDS connectivity
+#Infrastructure as code
 
 Below is the high level architecture of this assignment.
 
