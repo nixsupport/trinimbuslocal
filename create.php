@@ -10,10 +10,9 @@ if(isset($_POST['save'])){
 		if ($dbconn->connect_error) {
 			die("Connection failed: " . $dbconn->connect_error);
 		}
-	$emp_id = mysqli_real_escape_string($dbconn, $_REQUEST['emp_id']);
 	$emp_name = mysqli_real_escape_string($dbconn, $_REQUEST['emp_name']);
 
-	$sql = "INSERT INTO employee_data (employee_id, employee_name) VALUES ('$emp_id', '$emp_name')";
+	$sql = "INSERT INTO employee_data (employee_name) VALUES ('$emp_name')";
 	if($dbconn->query($sql)){
 		echo "Records added successfully.";
 	} else{
@@ -23,10 +22,6 @@ if(isset($_POST['save'])){
 }
 ?>
 <form method="post">
-    <p>
-        <label for="empId">Employee ID:</label>
-        <input type="text" name="emp_id" id="empId">
-    </p>
     <p>
         <label for="empName">Employee Name:</label>
         <input type="text" name="emp_name" id="empName">
